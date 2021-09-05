@@ -16,3 +16,4 @@ analyzer:
     - "dev/conductor/lib/proto/*"
     - "**/*.g.dart"
     - "**/*.freezed.dart"
+    - "**/*.gr.dart"

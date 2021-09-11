@@ -9,8 +9,9 @@ import 'package:flutter/material.dart' as _i2;
 
 import '../../../auth/presentation/authorization_page.dart' as _i5;
 import '../../../auth/presentation/sign_in_page.dart' as _i4;
+import '../../../github/repos/starred_repos/presentation/starred_repos_page.dart'
+    as _i6;
 import '../../../splash/presentation/splash_page.dart' as _i3;
-import '../../../starred_repos/presentation/starred_repos.page.dart' as _i6;
 
 class AppRouter extends _i1.RootStackRouter {
   AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
@@ -54,13 +55,13 @@ class AppRouter extends _i1.RootStackRouter {
       ];
 }
 
-class SplashRoute extends _i1.PageRouteInfo {
+class SplashRoute extends _i1.PageRouteInfo<void> {
   const SplashRoute() : super(name, path: '/');
 
   static const String name = 'SplashRoute';
 }
 
-class SignInRoute extends _i1.PageRouteInfo {
+class SignInRoute extends _i1.PageRouteInfo<void> {
   const SignInRoute() : super(name, path: '/sign-in');
 
   static const String name = 'SignInRoute';
@@ -95,7 +96,7 @@ class AuthorizationRouteArgs {
   final void Function(Uri) onAuthorizationCodeRedirectAttempt;
 }
 
-class StarredReposRoute extends _i1.PageRouteInfo {
+class StarredReposRoute extends _i1.PageRouteInfo<void> {
   const StarredReposRoute() : super(name, path: '/starred');
 
   static const String name = 'StarredReposRoute';

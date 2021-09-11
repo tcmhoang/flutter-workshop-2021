@@ -18,6 +18,12 @@ class AuthorizationPage extends StatefulWidget {
 
 class _AuthorizationPageState extends State<AuthorizationPage> {
   @override
+  void initState() {
+    super.initState();
+    WebView.platform = SurfaceAndroidWebView();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(

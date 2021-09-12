@@ -90,7 +90,7 @@ class GithubAuthenticator {
   Future<Either<AuthFailure, Unit>> signOut() async {
     try {
       try {
-        _dio.deleteUri(
+        await _dio.deleteUri(
           revocationEndpoint,
           data: {
             'access_token': (await _credentialsStorage.read())?.accessToken,

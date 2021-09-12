@@ -120,9 +120,10 @@ class __$UserDTOCopyWithImpl<$Res> extends _$UserDTOCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class _$_UserDTO with DiagnosticableTreeMixin implements _UserDTO {
+class _$_UserDTO extends _UserDTO with DiagnosticableTreeMixin {
   const _$_UserDTO(
-      {@JsonKey(name: 'login') required this.name, required this.avatarUrl});
+      {@JsonKey(name: 'login') required this.name, required this.avatarUrl})
+      : super._();
 
   factory _$_UserDTO.fromJson(Map<String, dynamic> json) =>
       _$$_UserDTOFromJson(json);
@@ -175,10 +176,11 @@ class _$_UserDTO with DiagnosticableTreeMixin implements _UserDTO {
   }
 }
 
-abstract class _UserDTO implements UserDTO {
+abstract class _UserDTO extends UserDTO {
   const factory _UserDTO(
       {@JsonKey(name: 'login') required String name,
       required String avatarUrl}) = _$_UserDTO;
+  const _UserDTO._() : super._();
 
   factory _UserDTO.fromJson(Map<String, dynamic> json) = _$_UserDTO.fromJson;
 

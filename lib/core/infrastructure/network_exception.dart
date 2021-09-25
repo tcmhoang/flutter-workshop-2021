@@ -1,4 +1,4 @@
-class RestApiException implements Exception{
+class RestApiException implements Exception {
   final int? errorCode;
 
   RestApiException(this.errorCode);

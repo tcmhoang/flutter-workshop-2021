@@ -1,6 +1,7 @@
-import 'package:repo_viewer/core/infrastructure/sembast_database.dart';
-import 'package:repo_viewer/github/core/infrastucture/github_headers.dart';
 import 'package:sembast/sembast.dart';
+
+import '../../../core/infrastructure/sembast_database.dart';
+import 'github_headers.dart';
 
 class GithubHeaderCache {
   final SembastDatabase _sembastDatabase;

@@ -2,8 +2,8 @@ import 'dart:core';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:repo_viewer/auth/domain/auth_failure.dart';
-import 'package:repo_viewer/auth/infrastructure/github_authenticator.dart';
+import '../domain/auth_failure.dart';
+import '../infrastructure/github_authenticator.dart';
 
 part 'auth_notifer.freezed.dart';
 

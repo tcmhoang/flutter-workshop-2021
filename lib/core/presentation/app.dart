@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:repo_viewer/auth/application/auth_notifer.dart';
-import 'package:repo_viewer/auth/shared/provider.dart';
-import 'package:repo_viewer/core/shared/provider.dart';
-import './routes/app_router.gr.dart';
+import '../../auth/application/auth_notifer.dart';
+import '../../auth/shared/provider.dart';
+import '../shared/provider.dart';
+import 'routes/app_router.gr.dart';
 
 final initializationProvider = FutureProvider<Unit>((ref) async {
   await ref.read(sembastProvider).init();

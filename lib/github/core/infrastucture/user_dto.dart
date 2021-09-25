@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:repo_viewer/github/core/domain/user.dart';
+import '../domain/user.dart';
 
 part 'user_dto.freezed.dart';
 

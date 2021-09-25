@@ -35,7 +35,7 @@ class GithubAuthenticator {
   static final redirectUrl = Uri.parse('http://localhost:3000/callback');
 
   static final revocationEndpoint =
-      Uri.parse('/applications/{client_id}/token');
+      Uri.parse('https://api.github.com/applications/$clientId/token');
 
   final CredentialsStorage _credentialsStorage;
   final Dio _dio;

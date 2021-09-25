@@ -4,8 +4,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:repo_viewer/auth/shared/provider.dart';
-import 'package:repo_viewer/core/presentation/routes/app_router.gr.dart';
+import '../shared/provider.dart';
+import '../../core/presentation/routes/app_router.gr.dart';
 
 class SignInPage extends ConsumerWidget {
   const SignInPage({Key? key}) : super(key: key);

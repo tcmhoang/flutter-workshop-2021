@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:repo_viewer/auth/infrastructure/github_authenticator.dart';
+import '../infrastructure/github_authenticator.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class AuthorizationPage extends StatefulWidget {

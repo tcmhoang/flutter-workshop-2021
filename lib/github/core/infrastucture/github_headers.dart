@@ -15,7 +15,7 @@ class GithubHeaders with _$GithubHeaders {
   }) = _GithubHeaders;
 
   factory GithubHeaders.parse(Response response) {
-    final link = response.headers.map['Link']?[-1];
+    final link = response.headers.map['Link']?[0];
     return GithubHeaders(
       etag: response.headers.map['ETag']?[0],
       link: link == null

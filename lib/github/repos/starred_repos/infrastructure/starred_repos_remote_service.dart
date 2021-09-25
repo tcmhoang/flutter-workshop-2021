@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:repo_viewer/core/infrastructure/network_exception.dart';
-import 'package:repo_viewer/core/infrastructure/remote_response.dart';
-import 'package:repo_viewer/github/core/infrastucture/github_header_cache.dart';
-import 'package:repo_viewer/github/core/infrastucture/github_repo_dto.dart';
-import 'package:repo_viewer/core/infrastructure/dio_extensions.dart';
+import '../../../../core/infrastructure/dio_extensions.dart';
+import '../../../../core/infrastructure/network_exception.dart';
+import '../../../../core/infrastructure/remote_response.dart';
+import '../../../core/infrastucture/github_header_cache.dart';
+import '../../../core/infrastucture/github_headers.dart';
+import '../../../core/infrastucture/github_repo_dto.dart';
 
 class StarredReposRemoteService {
   final Dio _dio;
@@ -35,6 +36,22 @@ class StarredReposRemoteService {
           },
         ),
       );
+      if (response.statusCode == 304) {
+        return const RemoteResponse.notModified();
+      } else if (response.statusCode == 200) {
+        await _headerCache.saveHeaders(
+          requestUri,
+          GithubHeaders.parse(response),
+        );
+
+        final convertedData = (response.data as List<dynamic>)
+            .map((e) => GithubRepoDTO.fromJson(e as Map<String, dynamic>))
+            .toList();
+
+        return RemoteResponse.withNewData(convertedData);
+      } else {
+        throw RestApiException(response.statusCode);
+      }
     } on DioError catch (e) {
       if (e.isNoConnectionError) {
         return const RemoteResponse.noConnection();

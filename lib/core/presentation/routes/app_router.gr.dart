@@ -19,31 +19,28 @@ class AppRouter extends _i1.RootStackRouter {
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i3.SplashPage();
-        }),
-    SignInRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i4.SignInPage();
-        }),
-    AuthorizationRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (data) {
-          final args = data.argsAs<AuthorizationRouteArgs>();
-          return _i5.AuthorizationPage(
+    SplashRoute.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i3.SplashPage());
+    },
+    SignInRoute.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i4.SignInPage());
+    },
+    AuthorizationRoute.name: (routeData) {
+      final args = routeData.argsAs<AuthorizationRouteArgs>();
+      return _i1.MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: _i5.AuthorizationPage(
               key: args.key,
               authorizationUrl: args.authorizationUrl,
               onAuthorizationCodeRedirectAttempt:
-                  args.onAuthorizationCodeRedirectAttempt);
-        }),
-    StarredReposRoute.name: (routeData) => _i1.MaterialPageX<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i6.StarredReposPage();
-        })
+                  args.onAuthorizationCodeRedirectAttempt));
+    },
+    StarredReposRoute.name: (routeData) {
+      return _i1.MaterialPageX<dynamic>(
+          routeData: routeData, child: const _i6.StarredReposPage());
+    }
   };
 
   @override

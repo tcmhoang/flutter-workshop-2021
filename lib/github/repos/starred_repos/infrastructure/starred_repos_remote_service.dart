@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+
 import '../../../../core/infrastructure/dio_extensions.dart';
 import '../../../../core/infrastructure/network_exception.dart';
 import '../../../../core/infrastructure/remote_response.dart';
@@ -16,7 +17,7 @@ class StarredReposRemoteService {
     int page,
   ) async {
     const token = '';
-    const accept = 'vnd.github.v3.html+json';
+    const accept = 'application/vnd.github.v3.html+json';
     final requestUri = Uri.https(
       'api.github.com',
       '/user/starred',
@@ -37,24 +38,32 @@ class StarredReposRemoteService {
         ),
       );
       if (response.statusCode == 304) {
-        return const RemoteResponse.notModified();
+        return RemoteResponse.notModified(
+          maxPage: previousHeader?.link?.maxPage ?? 0,
+        );
       } else if (response.statusCode == 200) {
+        final headers = GithubHeaders.parse(response);
         await _headerCache.saveHeaders(
           requestUri,
-          GithubHeaders.parse(response),
+          headers,
         );
 
         final convertedData = (response.data as List<dynamic>)
             .map((e) => GithubRepoDTO.fromJson(e as Map<String, dynamic>))
             .toList();
 
-        return RemoteResponse.withNewData(convertedData);
+        return RemoteResponse.withNewData(
+          convertedData,
+          maxPage: headers.link?.maxPage ?? 1,
+        );
       } else {
         throw RestApiException(response.statusCode);
       }
     } on DioError catch (e) {
       if (e.isNoConnectionError) {
-        return const RemoteResponse.noConnection();
+        return RemoteResponse.noConnection(
+          maxPage: previousHeader?.link?.maxPage ?? 0,
+        );
       } else if (e.response != null) {
         throw RestApiException(e.response?.statusCode);
       } else {

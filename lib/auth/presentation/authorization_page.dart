@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../infrastructure/github_authenticator.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
+import '../infrastructure/github_authenticator.dart';
 
 class AuthorizationPage extends StatefulWidget {
   final Uri authorizationUrl;

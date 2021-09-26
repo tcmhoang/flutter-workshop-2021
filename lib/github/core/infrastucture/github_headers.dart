@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'github_headers.freezed.dart';
-
 part 'github_headers.g.dart';
 
 @freezed

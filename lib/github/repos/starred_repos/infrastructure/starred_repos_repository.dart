@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:repo_viewer/core/infrastructure/network_exception.dart';
-import 'package:repo_viewer/github/core/infrastucture/github_repo_dto.dart';
+import '../../../../core/infrastructure/network_exception.dart';
+import '../../../core/infrastucture/github_repo_dto.dart';
 import '../../../../core/infrastructure/fresh.dart';
 import '../../../core/domain/github_failure.dart';
 import '../../../core/domain/github_repo.dart';

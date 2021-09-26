@@ -1,16 +1,18 @@
 import 'package:dartz/dartz.dart';
-import '../../../../core/infrastructure/network_exception.dart';
-import '../../../core/infrastucture/github_repo_dto.dart';
+
 import '../../../../core/infrastructure/fresh.dart';
+import '../../../../core/infrastructure/network_exception.dart';
 import '../../../core/domain/github_failure.dart';
 import '../../../core/domain/github_repo.dart';
+import '../../../core/infrastucture/github_repo_dto.dart';
+import 'starred_repos_local_service.dart';
 import 'starred_repos_remote_service.dart';
 
 class StarredReposRepository {
   final StarredReposRemoteService _remoteService;
-  //TODO: Local service
+  final StarredReposLocalService _localService;
 
-  StarredReposRepository(this._remoteService);
+  StarredReposRepository(this._remoteService, this._localService);
 
   Future<Either<GithubFailure, Fresh<List<GithubRepo>>>> getStarredReposPage(
     int page,
@@ -18,17 +20,22 @@ class StarredReposRepository {
     try {
       final remotePageItems = await _remoteService.getStarredReposPage(page);
       return right(
-        remotePageItems.when(
-          noConnection: (maxPage) => Fresh.no(
-            [],
+        await remotePageItems.when(
+          noConnection: (maxPage) async => Fresh.no(
+            await _localService.getPages(page).then((_) => _.toDomain()),
             isNextPageAvailable: page < maxPage,
           ),
-          notModified: (maxPage) =>
-              Fresh.yes([], isNextPageAvailable: page < maxPage),
-          withNewData: (data, maxPage) => Fresh.yes(
-            data.toDomain(),
+          notModified: (maxPage) async => Fresh.yes(
+            await _localService.getPages(page).then((_) => _.toDomain()),
             isNextPageAvailable: page < maxPage,
           ),
+          withNewData: (data, maxPage) async {
+            await _localService.upsertPage(data, page);
+            return Fresh.yes(
+              data.toDomain(),
+              isNextPageAvailable: page < maxPage,
+            );
+          },
         ),
       );
     } on RestApiException catch (e) {

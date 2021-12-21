@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:repo_viewer/github/core/infrastructure/github_header_cache.dart';
+import 'package:repo_viewer/github/core/infrastructure/github_headers.dart';
+import 'package:repo_viewer/github/core/infrastructure/github_repo_dto.dart';
+import 'package:repo_viewer/github/core/infrastructure/pagination_config.dart';
 
 import '../../../../core/infrastructure/dio_extensions.dart';
 import '../../../../core/infrastructure/network_exception.dart';
 import '../../../../core/infrastructure/remote_response.dart';
-import '../../../core/infrastucture/github_header_cache.dart';
-import '../../../core/infrastucture/github_headers.dart';
-import '../../../core/infrastucture/github_repo_dto.dart';
-import '../../../core/infrastucture/pagination_config.dart';
 
 class StarredReposRemoteService {
   final Dio _dio;
@@ -22,7 +22,7 @@ class StarredReposRemoteService {
       '/user/starred',
       {
         'page': '$page',
-        'per_page': PagninationConfig.itemsPerPage.toString(),
+        'per_page': PaginationConfig.itemsPerPage.toString(),
       },
     );
 

@@ -14,7 +14,7 @@ class StarredReposPage extends ConsumerWidget {
           onPressed: () {
             ref.read(authNotifierProvider.notifier).signOut();
           },
-          child: Text('Sign Out'),
+          child: const Text('Sign Out'),
         ),
       ),
     );

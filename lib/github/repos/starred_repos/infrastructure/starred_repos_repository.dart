@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
+import 'package:repo_viewer/github/core/infrastructure/github_repo_dto.dart';
 
 import '../../../../core/infrastructure/fresh.dart';
 import '../../../../core/infrastructure/network_exception.dart';
 import '../../../core/domain/github_failure.dart';
 import '../../../core/domain/github_repo.dart';
-import '../../../core/infrastucture/github_repo_dto.dart';
 import 'starred_repos_local_service.dart';
 import 'starred_repos_remote_service.dart';
 

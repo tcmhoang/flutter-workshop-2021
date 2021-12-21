@@ -40,6 +40,7 @@ const $UserDTO = _$UserDTOTearOff();
 
 /// @nodoc
 mixin _$UserDTO {
+// ignore: invalid_annotation_target
   @JsonKey(name: 'login')
   String get name => throw _privateConstructorUsedError;
   String get avatarUrl => throw _privateConstructorUsedError;
@@ -128,7 +129,7 @@ class _$_UserDTO extends _UserDTO with DiagnosticableTreeMixin {
   factory _$_UserDTO.fromJson(Map<String, dynamic> json) =>
       _$$_UserDTOFromJson(json);
 
-  @override
+  @override // ignore: invalid_annotation_target
   @JsonKey(name: 'login')
   final String name;
   @override
@@ -184,7 +185,7 @@ abstract class _UserDTO extends UserDTO {
 
   factory _UserDTO.fromJson(Map<String, dynamic> json) = _$_UserDTO.fromJson;
 
-  @override
+  @override // ignore: invalid_annotation_target
   @JsonKey(name: 'login')
   String get name => throw _privateConstructorUsedError;
   @override

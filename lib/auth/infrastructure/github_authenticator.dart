@@ -20,9 +20,9 @@ class GithubOAuthHttpClient extends http.BaseClient {
 }
 
 class GithubAuthenticator {
-  static const clientId = '';
+  static const clientId = '422249753fb132543eff';
 
-  static const clientSecret = '';
+  static const clientSecret = '0559c45a67831e2cc340660c5f0f9ee688708e38';
 
   static const scopes = ['read:user', 'repo'];
 

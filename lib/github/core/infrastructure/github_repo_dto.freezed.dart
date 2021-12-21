@@ -45,7 +45,8 @@ const $GithubRepoDTO = _$GithubRepoDTOTearOff();
 /// @nodoc
 mixin _$GithubRepoDTO {
   UserDTO get owner => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String get name =>
+      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
   @JsonKey(fromJson: _descriptionFromJson)
   String get description => throw _privateConstructorUsedError;
   int get stargazersCount => throw _privateConstructorUsedError;
@@ -188,7 +189,7 @@ class _$_GithubRepoDTO extends _GithubRepoDTO with DiagnosticableTreeMixin {
   final UserDTO owner;
   @override
   final String name;
-  @override
+  @override // ignore: invalid_annotation_target
   @JsonKey(fromJson: _descriptionFromJson)
   final String description;
   @override
@@ -260,7 +261,7 @@ abstract class _GithubRepoDTO extends GithubRepoDTO {
   UserDTO get owner => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
-  @override
+  @override // ignore: invalid_annotation_target
   @JsonKey(fromJson: _descriptionFromJson)
   String get description => throw _privateConstructorUsedError;
   @override

@@ -20,9 +20,9 @@ class GithubOAuthHttpClient extends http.BaseClient {
 }
 
 class GithubAuthenticator {
-  static const clientId = '422249753fb132543eff';
+  static const clientId = '8905e2fd43ab9a5aa327';
 
-  static const clientSecret = '0559c45a67831e2cc340660c5f0f9ee688708e38';
+  static const clientSecret = '245d4a8ead11ba77b5f0eecdbcab47ce0d4a410f';
 
   static const scopes = ['read:user', 'repo'];
 
@@ -30,7 +30,7 @@ class GithubAuthenticator {
       Uri.parse('https://github.com/login/oauth/authorize');
 
   static final tokenEndpoint =
-      Uri.parse('https://api.github.com/applications/$clientId/token');
+      Uri.parse('https://github.com/login/oauth/access_token');
 
   static final redirectUrl = Uri.parse('http://localhost:3000/callback');
 

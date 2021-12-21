@@ -141,23 +141,20 @@ class _$_Fresh<T> extends _Fresh<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Fresh<T> &&
-            (identical(other.entity, entity) ||
-                const DeepCollectionEquality().equals(other.entity, entity)) &&
-            (identical(other.isFresh, isFresh) ||
-                const DeepCollectionEquality()
-                    .equals(other.isFresh, isFresh)) &&
-            (identical(other.isNextPageAvailable, isNextPageAvailable) ||
-                const DeepCollectionEquality()
-                    .equals(other.isNextPageAvailable, isNextPageAvailable)));
+        (other.runtimeType == runtimeType &&
+            other is _Fresh<T> &&
+            const DeepCollectionEquality().equals(other.entity, entity) &&
+            const DeepCollectionEquality().equals(other.isFresh, isFresh) &&
+            const DeepCollectionEquality()
+                .equals(other.isNextPageAvailable, isNextPageAvailable));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(entity) ^
-      const DeepCollectionEquality().hash(isFresh) ^
-      const DeepCollectionEquality().hash(isNextPageAvailable);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(entity),
+      const DeepCollectionEquality().hash(isFresh),
+      const DeepCollectionEquality().hash(isNextPageAvailable));
 
   @JsonKey(ignore: true)
   @override
@@ -173,11 +170,11 @@ abstract class _Fresh<T> extends Fresh<T> {
   const _Fresh._() : super._();
 
   @override
-  T get entity => throw _privateConstructorUsedError;
+  T get entity;
   @override
-  bool get isFresh => throw _privateConstructorUsedError;
+  bool get isFresh;
   @override
-  bool? get isNextPageAvailable => throw _privateConstructorUsedError;
+  bool? get isNextPageAvailable;
   @override
   @JsonKey(ignore: true)
   _$FreshCopyWith<T, _Fresh<T>> get copyWith =>

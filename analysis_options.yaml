@@ -9,6 +9,8 @@ analyzer:
     parameter_assignments: error
     sort_unnamed_constructors_first: ignore
     sort_pub_dependencies: ignore
+    always_use_package_imports: ignore
+    prefer_relative_imports: error
 
   exclude:
     - "bin/cache/**"

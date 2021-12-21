@@ -34,7 +34,7 @@ class _$GithubRepoDTOTearOff {
     );
   }
 
-  GithubRepoDTO fromJson(Map<String, Object> json) {
+  GithubRepoDTO fromJson(Map<String, Object?> json) {
     return GithubRepoDTO.fromJson(json);
   }
 }
@@ -214,26 +214,23 @@ class _$_GithubRepoDTO extends _GithubRepoDTO with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GithubRepoDTO &&
-            (identical(other.owner, owner) ||
-                const DeepCollectionEquality().equals(other.owner, owner)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.stargazersCount, stargazersCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.stargazersCount, stargazersCount)));
+        (other.runtimeType == runtimeType &&
+            other is _GithubRepoDTO &&
+            const DeepCollectionEquality().equals(other.owner, owner) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality()
+                .equals(other.stargazersCount, stargazersCount));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(owner) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(stargazersCount);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(owner),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(stargazersCount));
 
   @JsonKey(ignore: true)
   @override
@@ -258,14 +255,14 @@ abstract class _GithubRepoDTO extends GithubRepoDTO {
       _$_GithubRepoDTO.fromJson;
 
   @override
-  UserDTO get owner => throw _privateConstructorUsedError;
+  UserDTO get owner;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override // ignore: invalid_annotation_target
   @JsonKey(fromJson: _descriptionFromJson)
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  int get stargazersCount => throw _privateConstructorUsedError;
+  int get stargazersCount;
   @override
   @JsonKey(ignore: true)
   _$GithubRepoDTOCopyWith<_GithubRepoDTO> get copyWith =>

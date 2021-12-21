@@ -211,14 +211,14 @@ class _$_Initial extends _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initial &&
-            (identical(other.repos, repos) ||
-                const DeepCollectionEquality().equals(other.repos, repos)));
+        (other.runtimeType == runtimeType &&
+            other is _Initial &&
+            const DeepCollectionEquality().equals(other.repos, repos));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(repos);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(repos));
 
   @JsonKey(ignore: true)
   @override
@@ -316,7 +316,7 @@ abstract class _Initial extends StarredReposState {
   const _Initial._() : super._();
 
   @override
-  Fresh<List<GithubRepo>> get repos => throw _privateConstructorUsedError;
+  Fresh<List<GithubRepo>> get repos;
   @override
   @JsonKey(ignore: true)
   _$InitialCopyWith<_Initial> get copyWith =>
@@ -383,19 +383,18 @@ class _$_LoadInProgress extends _LoadInProgress {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadInProgress &&
-            (identical(other.repos, repos) ||
-                const DeepCollectionEquality().equals(other.repos, repos)) &&
-            (identical(other.itemPerPage, itemPerPage) ||
-                const DeepCollectionEquality()
-                    .equals(other.itemPerPage, itemPerPage)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadInProgress &&
+            const DeepCollectionEquality().equals(other.repos, repos) &&
+            const DeepCollectionEquality()
+                .equals(other.itemPerPage, itemPerPage));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(repos) ^
-      const DeepCollectionEquality().hash(itemPerPage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(repos),
+      const DeepCollectionEquality().hash(itemPerPage));
 
   @JsonKey(ignore: true)
   @override
@@ -494,8 +493,8 @@ abstract class _LoadInProgress extends StarredReposState {
   const _LoadInProgress._() : super._();
 
   @override
-  Fresh<List<GithubRepo>> get repos => throw _privateConstructorUsedError;
-  int get itemPerPage => throw _privateConstructorUsedError;
+  Fresh<List<GithubRepo>> get repos;
+  int get itemPerPage;
   @override
   @JsonKey(ignore: true)
   _$LoadInProgressCopyWith<_LoadInProgress> get copyWith =>
@@ -563,19 +562,18 @@ class _$_LoadSuccess extends _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.repos, repos) ||
-                const DeepCollectionEquality().equals(other.repos, repos)) &&
-            (identical(other.isNextPageAvailable, isNextPageAvailable) ||
-                const DeepCollectionEquality()
-                    .equals(other.isNextPageAvailable, isNextPageAvailable)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality().equals(other.repos, repos) &&
+            const DeepCollectionEquality()
+                .equals(other.isNextPageAvailable, isNextPageAvailable));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(repos) ^
-      const DeepCollectionEquality().hash(isNextPageAvailable);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(repos),
+      const DeepCollectionEquality().hash(isNextPageAvailable));
 
   @JsonKey(ignore: true)
   @override
@@ -674,8 +672,8 @@ abstract class _LoadSuccess extends StarredReposState {
   const _LoadSuccess._() : super._();
 
   @override
-  Fresh<List<GithubRepo>> get repos => throw _privateConstructorUsedError;
-  bool get isNextPageAvailable => throw _privateConstructorUsedError;
+  Fresh<List<GithubRepo>> get repos;
+  bool get isNextPageAvailable;
   @override
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
@@ -750,18 +748,17 @@ class _$_LoadFailure extends _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.repos, repos) ||
-                const DeepCollectionEquality().equals(other.repos, repos)) &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            const DeepCollectionEquality().equals(other.repos, repos) &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(repos) ^
-      const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(repos),
+      const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -860,8 +857,8 @@ abstract class _LoadFailure extends StarredReposState {
   const _LoadFailure._() : super._();
 
   @override
-  Fresh<List<GithubRepo>> get repos => throw _privateConstructorUsedError;
-  GithubFailure get failure => throw _privateConstructorUsedError;
+  Fresh<List<GithubRepo>> get repos;
+  GithubFailure get failure;
   @override
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>

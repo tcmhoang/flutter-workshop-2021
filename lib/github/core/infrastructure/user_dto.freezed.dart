@@ -30,7 +30,7 @@ class _$UserDTOTearOff {
     );
   }
 
-  UserDTO fromJson(Map<String, Object> json) {
+  UserDTO fromJson(Map<String, Object?> json) {
     return UserDTO.fromJson(json);
   }
 }
@@ -152,19 +152,17 @@ class _$_UserDTO extends _UserDTO with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserDTO &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.avatarUrl, avatarUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.avatarUrl, avatarUrl)));
+        (other.runtimeType == runtimeType &&
+            other is _UserDTO &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.avatarUrl, avatarUrl));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(avatarUrl);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(avatarUrl));
 
   @JsonKey(ignore: true)
   @override
@@ -187,9 +185,9 @@ abstract class _UserDTO extends UserDTO {
 
   @override // ignore: invalid_annotation_target
   @JsonKey(name: 'login')
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get avatarUrl => throw _privateConstructorUsedError;
+  String get avatarUrl;
   @override
   @JsonKey(ignore: true)
   _$UserDTOCopyWith<_UserDTO> get copyWith =>

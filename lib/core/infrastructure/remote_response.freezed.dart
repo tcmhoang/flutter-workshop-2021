@@ -182,14 +182,14 @@ class _$_NoConnection<T> extends _NoConnection<T> with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NoConnection<T> &&
-            (identical(other.maxPage, maxPage) ||
-                const DeepCollectionEquality().equals(other.maxPage, maxPage)));
+        (other.runtimeType == runtimeType &&
+            other is _NoConnection<T> &&
+            const DeepCollectionEquality().equals(other.maxPage, maxPage));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(maxPage);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(maxPage));
 
   @JsonKey(ignore: true)
   @override
@@ -270,7 +270,7 @@ abstract class _NoConnection<T> extends RemoteResponse<T> {
   const _NoConnection._() : super._();
 
   @override
-  int get maxPage => throw _privateConstructorUsedError;
+  int get maxPage;
   @override
   @JsonKey(ignore: true)
   _$NoConnectionCopyWith<T, _NoConnection<T>> get copyWith =>
@@ -335,14 +335,14 @@ class _$_NotModified<T> extends _NotModified<T> with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NotModified<T> &&
-            (identical(other.maxPage, maxPage) ||
-                const DeepCollectionEquality().equals(other.maxPage, maxPage)));
+        (other.runtimeType == runtimeType &&
+            other is _NotModified<T> &&
+            const DeepCollectionEquality().equals(other.maxPage, maxPage));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(maxPage);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(maxPage));
 
   @JsonKey(ignore: true)
   @override
@@ -423,7 +423,7 @@ abstract class _NotModified<T> extends RemoteResponse<T> {
   const _NotModified._() : super._();
 
   @override
-  int get maxPage => throw _privateConstructorUsedError;
+  int get maxPage;
   @override
   @JsonKey(ignore: true)
   _$NotModifiedCopyWith<T, _NotModified<T>> get copyWith =>
@@ -496,18 +496,17 @@ class _$_WithNewData<T> extends _WithNewData<T> with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WithNewData<T> &&
-            (identical(other.data, data) ||
-                const DeepCollectionEquality().equals(other.data, data)) &&
-            (identical(other.maxPage, maxPage) ||
-                const DeepCollectionEquality().equals(other.maxPage, maxPage)));
+        (other.runtimeType == runtimeType &&
+            other is _WithNewData<T> &&
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.maxPage, maxPage));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(data) ^
-      const DeepCollectionEquality().hash(maxPage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(maxPage));
 
   @JsonKey(ignore: true)
   @override
@@ -588,9 +587,9 @@ abstract class _WithNewData<T> extends RemoteResponse<T> {
       _$_WithNewData<T>;
   const _WithNewData._() : super._();
 
-  T get data => throw _privateConstructorUsedError;
+  T get data;
   @override
-  int get maxPage => throw _privateConstructorUsedError;
+  int get maxPage;
   @override
   @JsonKey(ignore: true)
   _$WithNewDataCopyWith<T, _WithNewData<T>> get copyWith =>

@@ -11,8 +11,11 @@ import 'routes/app_router.gr.dart';
 final initializationProvider = FutureProvider<Unit>((ref) async {
   await ref.read(sembastProvider).init();
   ref.read(dioProvider)
-    ..options =
-        BaseOptions(headers: {'Accept': 'application/vnd.github.v3.html+json'})
+    ..options = BaseOptions(
+      headers: {'Accept': 'application/vnd.github.v3.html+json'},
+      validateStatus: (status) =>
+          status != null && status >= 200 && status < 400,
+    )
     ..interceptors.add(ref.watch(oAuth2InterceptorProvider));
   final authNotifier = ref.read(authNotifierProvider.notifier);
   await authNotifier.checkAndUpdateAuthStatus();

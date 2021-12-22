@@ -7,11 +7,21 @@ part of 'github_repo_dto.dart';
 // **************************************************************************
 
 _$_GithubRepoDTO _$$_GithubRepoDTOFromJson(Map<String, dynamic> json) =>
-    _$_GithubRepoDTO(
-      owner: UserDTO.fromJson(json['owner'] as Map<String, dynamic>),
-      name: json['name'] as String,
-      description: _descriptionFromJson(json['description']),
-      stargazersCount: json['stargazers_count'] as int,
+    $checkedCreate(
+      r'_$_GithubRepoDTO',
+      json,
+      ($checkedConvert) {
+        final val = _$_GithubRepoDTO(
+          owner: $checkedConvert(
+              'owner', (v) => UserDTO.fromJson(v as Map<String, dynamic>)),
+          name: $checkedConvert('name', (v) => v as String),
+          description:
+              $checkedConvert('description', (v) => _descriptionFromJson(v)),
+          stargazersCount: $checkedConvert('stargazers_count', (v) => v as int),
+        );
+        return val;
+      },
+      fieldKeyMap: const {'stargazersCount': 'stargazers_count'},
     );
 
 Map<String, dynamic> _$$_GithubRepoDTOToJson(_$_GithubRepoDTO instance) =>

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:repo_viewer/core/presentation/toast.dart';
+import 'package:repo_viewer/github/core/presentation/no_result_display.dart';
 import 'package:repo_viewer/github/core/shared/providers.dart';
 import 'package:repo_viewer/github/repos/starred_repos/application/starred_repos_notifier.dart';
 import 'package:repo_viewer/github/repos/starred_repos/presentation/failure_repo_tile.dart';
@@ -43,7 +44,15 @@ class _PaginatedReposListViewState extends State<PaginatedReposListView> {
         });
         final state = ref.watch(starredReposNotifierProvider);
         return NotificationListener<ScrollNotification>(
-          child: _PaginatedListView(state: state),
+          child: state.maybeWhen(
+            loadSuccess: (repos, _) => repos.entity.isEmpty,
+            orElse: () => false,
+          )
+              ? const NoResultDisplay(
+                  message:
+                      "That's about everything we could find in your starred repos right now",
+                )
+              : _PaginatedListView(state: state),
           onNotification: (notification) {
             final metrics = notification.metrics;
             final limit = metrics.maxScrollExtent - metrics.viewportDimension;

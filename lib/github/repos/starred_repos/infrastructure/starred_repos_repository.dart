@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:repo_viewer/github/core/infrastructure/github_repo_dto.dart';
+import 'package:repo_viewer/github/repos/core/infrastructure/extensions.dart';
 
 import '../../../../core/infrastructure/fresh.dart';
 import '../../../../core/infrastructure/network_exception.dart';
@@ -42,8 +43,4 @@ class StarredReposRepository {
       return left(GithubFailure.api(e.errorCode));
     }
   }
-}
-
-extension DTOListToDomainList on List<GithubRepoDTO> {
-  List<GithubRepo> toDomain() => map((e) => e.toDomain()).toList();
 }

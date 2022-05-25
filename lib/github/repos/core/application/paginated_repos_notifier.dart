@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:repo_viewer/core/infrastructure/fresh.dart';
-import 'package:repo_viewer/github/core/domain/github_failure.dart';
-import 'package:repo_viewer/github/core/domain/github_repo.dart';
-import 'package:repo_viewer/github/core/infrastructure/pagination_config.dart';
+import '../../../../core/infrastructure/fresh.dart';
+import '../../../core/domain/github_failure.dart';
+import '../../../core/domain/github_repo.dart';
+import '../../../core/infrastructure/pagination_config.dart';
 
 part 'paginated_repos_notifier.freezed.dart';
 
@@ -36,6 +36,7 @@ class PaginatedReposNotifier extends StateNotifier<PaginatedReposState> {
 
   PaginatedReposNotifier() : super(PaginatedReposState.initial(Fresh.yes([])));
 
+  @protected
   Future<void> getNextPage(
     RepositoryGetter getter,
   ) async {

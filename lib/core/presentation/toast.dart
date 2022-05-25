@@ -12,7 +12,7 @@ Future<void> showNoConnectionToast(
       return Flash.dialog(
         controller: controller,
         backgroundColor:
-            Theme.of(context).colorScheme.secondaryVariant.withOpacity(.7),
+            Theme.of(context).colorScheme.secondary.withOpacity(.7),
         borderRadius: BorderRadius.circular(9),
         margin: const EdgeInsets.all(8),
         child: Padding(

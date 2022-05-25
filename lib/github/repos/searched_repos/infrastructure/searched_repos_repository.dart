@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:repo_viewer/core/infrastructure/fresh.dart';
-import 'package:repo_viewer/core/infrastructure/network_exception.dart';
-import 'package:repo_viewer/github/core/domain/github_failure.dart';
-import 'package:repo_viewer/github/core/domain/github_repo.dart';
-import 'package:repo_viewer/github/repos/core/infrastructure/extensions.dart';
-import 'package:repo_viewer/github/repos/searched_repos/infrastructure/searched_repos_remote_service.dart';
+import '../../../../core/infrastructure/fresh.dart';
+import '../../../../core/infrastructure/network_exception.dart';
+import '../../../core/domain/github_failure.dart';
+import '../../../core/domain/github_repo.dart';
+import '../../core/infrastructure/extensions.dart';
+import 'searched_repos_remote_service.dart';
 
 class SearchedReposRepository {
   final SearchedReposRemoteService _remoteService;

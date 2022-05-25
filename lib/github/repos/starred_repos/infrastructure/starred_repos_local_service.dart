@@ -1,9 +1,9 @@
 import 'package:collection/collection.dart';
-import 'package:repo_viewer/github/core/infrastructure/github_repo_dto.dart';
-import 'package:repo_viewer/github/core/infrastructure/pagination_config.dart';
 import 'package:sembast/sembast.dart';
 
 import '../../../../core/infrastructure/sembast_database.dart';
+import '../../../core/infrastructure/github_repo_dto.dart';
+import '../../../core/infrastructure/pagination_config.dart';
 
 class StarredReposLocalService {
   final SembastDatabase _sembastDatabase;

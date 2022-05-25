@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:repo_viewer/github/core/shared/providers.dart';
 
 import '../../../../auth/shared/provider.dart';
-import 'paginated_repos_list_view.dart';
+import '../../../core/presentation/paginated_repos_list_view.dart';
+import '../../../core/shared/providers.dart';
 
 class StarredReposPage extends ConsumerStatefulWidget {
   const StarredReposPage({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class _StarredReposPageState extends ConsumerState<StarredReposPage> {
     //       .read(starredReposNotifierProvider.notifier)
     //       .getNextStarredReposPage(),
     // );
-    SchedulerBinding.instance?.addPostFrameCallback(
+    SchedulerBinding.instance.addPostFrameCallback(
       (_) => ref
           .read(starredReposNotifierProvider.notifier)
           .getNextStarredReposPage(),
@@ -42,7 +42,16 @@ class _StarredReposPageState extends ConsumerState<StarredReposPage> {
           )
         ],
       ),
-      body: const PaginatedReposListView(),
+      body: PaginatedReposListView(
+        paginatedReposNotifierProvider: starredReposNotifierProvider,
+        getNextPage: (WidgetRef ref) {
+          ref
+              .read(starredReposNotifierProvider.notifier)
+              .getNextStarredReposPage();
+        },
+        noResultMessage:
+            "That's about everything we could find in your starred repos right now.",
+      ),
     );
   }
 }

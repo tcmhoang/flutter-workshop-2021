@@ -1,17 +1,17 @@
 import 'package:dio/dio.dart';
-import 'package:repo_viewer/core/infrastructure/dio_extensions.dart';
-import 'package:repo_viewer/core/infrastructure/network_exception.dart';
-import 'package:repo_viewer/core/infrastructure/remote_response.dart';
-import 'package:repo_viewer/github/core/infrastructure/github_header_cache.dart';
-import 'package:repo_viewer/github/core/infrastructure/github_headers.dart';
-import 'package:repo_viewer/github/core/infrastructure/github_repo_dto.dart';
-import 'package:repo_viewer/github/core/infrastructure/pagination_config.dart';
 
-abstract class ReposRemoveService {
+import '../../../../core/infrastructure/dio_extensions.dart';
+import '../../../../core/infrastructure/network_exception.dart';
+import '../../../../core/infrastructure/remote_response.dart';
+import '../../../core/infrastructure/github_header_cache.dart';
+import '../../../core/infrastructure/github_headers.dart';
+import '../../../core/infrastructure/github_repo_dto.dart';
+
+abstract class ReposRemoteService {
   final Dio _dio;
   final GithubHeaderCache _headerCache;
 
-  ReposRemoveService(this._dio, this._headerCache);
+  ReposRemoteService(this._dio, this._headerCache);
 
   Future<RemoteResponse<List<GithubRepoDTO>>> getPage({
     required Uri requestUri,

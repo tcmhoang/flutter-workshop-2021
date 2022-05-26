@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'github_repo_dto.dart';
@@ -11,36 +12,11 @@ part of 'github_repo_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 GithubRepoDTO _$GithubRepoDTOFromJson(Map<String, dynamic> json) {
   return _GithubRepoDTO.fromJson(json);
 }
-
-/// @nodoc
-class _$GithubRepoDTOTearOff {
-  const _$GithubRepoDTOTearOff();
-
-  _GithubRepoDTO call(
-      {required UserDTO owner,
-      required String name,
-      @JsonKey(fromJson: _descriptionFromJson) required String description,
-      required int stargazersCount}) {
-    return _GithubRepoDTO(
-      owner: owner,
-      name: name,
-      description: description,
-      stargazersCount: stargazersCount,
-    );
-  }
-
-  GithubRepoDTO fromJson(Map<String, Object?> json) {
-    return GithubRepoDTO.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $GithubRepoDTO = _$GithubRepoDTOTearOff();
 
 /// @nodoc
 mixin _$GithubRepoDTO {
@@ -116,11 +92,11 @@ class _$GithubRepoDTOCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GithubRepoDTOCopyWith<$Res>
+abstract class _$$_GithubRepoDTOCopyWith<$Res>
     implements $GithubRepoDTOCopyWith<$Res> {
-  factory _$GithubRepoDTOCopyWith(
-          _GithubRepoDTO value, $Res Function(_GithubRepoDTO) then) =
-      __$GithubRepoDTOCopyWithImpl<$Res>;
+  factory _$$_GithubRepoDTOCopyWith(
+          _$_GithubRepoDTO value, $Res Function(_$_GithubRepoDTO) then) =
+      __$$_GithubRepoDTOCopyWithImpl<$Res>;
   @override
   $Res call(
       {UserDTO owner,
@@ -133,15 +109,15 @@ abstract class _$GithubRepoDTOCopyWith<$Res>
 }
 
 /// @nodoc
-class __$GithubRepoDTOCopyWithImpl<$Res>
+class __$$_GithubRepoDTOCopyWithImpl<$Res>
     extends _$GithubRepoDTOCopyWithImpl<$Res>
-    implements _$GithubRepoDTOCopyWith<$Res> {
-  __$GithubRepoDTOCopyWithImpl(
-      _GithubRepoDTO _value, $Res Function(_GithubRepoDTO) _then)
-      : super(_value, (v) => _then(v as _GithubRepoDTO));
+    implements _$$_GithubRepoDTOCopyWith<$Res> {
+  __$$_GithubRepoDTOCopyWithImpl(
+      _$_GithubRepoDTO _value, $Res Function(_$_GithubRepoDTO) _then)
+      : super(_value, (v) => _then(v as _$_GithubRepoDTO));
 
   @override
-  _GithubRepoDTO get _value => super._value as _GithubRepoDTO;
+  _$_GithubRepoDTO get _value => super._value as _$_GithubRepoDTO;
 
   @override
   $Res call({
@@ -150,7 +126,7 @@ class __$GithubRepoDTOCopyWithImpl<$Res>
     Object? description = freezed,
     Object? stargazersCount = freezed,
   }) {
-    return _then(_GithubRepoDTO(
+    return _then(_$_GithubRepoDTO(
       owner: owner == freezed
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
@@ -189,7 +165,8 @@ class _$_GithubRepoDTO extends _GithubRepoDTO with DiagnosticableTreeMixin {
   final UserDTO owner;
   @override
   final String name;
-  @override // ignore: invalid_annotation_target
+// ignore: invalid_annotation_target
+  @override
   @JsonKey(fromJson: _descriptionFromJson)
   final String description;
   @override
@@ -215,7 +192,7 @@ class _$_GithubRepoDTO extends _GithubRepoDTO with DiagnosticableTreeMixin {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GithubRepoDTO &&
+            other is _$_GithubRepoDTO &&
             const DeepCollectionEquality().equals(other.owner, owner) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
@@ -224,6 +201,7 @@ class _$_GithubRepoDTO extends _GithubRepoDTO with DiagnosticableTreeMixin {
                 .equals(other.stargazersCount, stargazersCount));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -234,8 +212,8 @@ class _$_GithubRepoDTO extends _GithubRepoDTO with DiagnosticableTreeMixin {
 
   @JsonKey(ignore: true)
   @override
-  _$GithubRepoDTOCopyWith<_GithubRepoDTO> get copyWith =>
-      __$GithubRepoDTOCopyWithImpl<_GithubRepoDTO>(this, _$identity);
+  _$$_GithubRepoDTOCopyWith<_$_GithubRepoDTO> get copyWith =>
+      __$$_GithubRepoDTOCopyWithImpl<_$_GithubRepoDTO>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -245,26 +223,27 @@ class _$_GithubRepoDTO extends _GithubRepoDTO with DiagnosticableTreeMixin {
 
 abstract class _GithubRepoDTO extends GithubRepoDTO {
   const factory _GithubRepoDTO(
-      {required UserDTO owner,
-      required String name,
-      @JsonKey(fromJson: _descriptionFromJson) required String description,
-      required int stargazersCount}) = _$_GithubRepoDTO;
+      {required final UserDTO owner,
+      required final String name,
+      @JsonKey(fromJson: _descriptionFromJson)
+          required final String description,
+      required final int stargazersCount}) = _$_GithubRepoDTO;
   const _GithubRepoDTO._() : super._();
 
   factory _GithubRepoDTO.fromJson(Map<String, dynamic> json) =
       _$_GithubRepoDTO.fromJson;
 
   @override
-  UserDTO get owner;
+  UserDTO get owner => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override // ignore: invalid_annotation_target
   @JsonKey(fromJson: _descriptionFromJson)
-  String get description;
+  String get description => throw _privateConstructorUsedError;
   @override
-  int get stargazersCount;
+  int get stargazersCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GithubRepoDTOCopyWith<_GithubRepoDTO> get copyWith =>
+  _$$_GithubRepoDTOCopyWith<_$_GithubRepoDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }

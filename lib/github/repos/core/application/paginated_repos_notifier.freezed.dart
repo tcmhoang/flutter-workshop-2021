@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'paginated_repos_notifier.dart';
@@ -11,50 +12,11 @@ part of 'paginated_repos_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$PaginatedReposStateTearOff {
-  const _$PaginatedReposStateTearOff();
-
-  _Initial initial(Fresh<List<GithubRepo>> repos) {
-    return _Initial(
-      repos,
-    );
-  }
-
-  _LoadInProgress loadInProgress(
-      Fresh<List<GithubRepo>> repos, int itemPerPage) {
-    return _LoadInProgress(
-      repos,
-      itemPerPage,
-    );
-  }
-
-  _LoadSuccess loadSuccess(Fresh<List<GithubRepo>> repos,
-      {required bool isNextPageAvailable}) {
-    return _LoadSuccess(
-      repos,
-      isNextPageAvailable: isNextPageAvailable,
-    );
-  }
-
-  _LoadFailure loadFailure(
-      Fresh<List<GithubRepo>> repos, GithubFailure failure) {
-    return _LoadFailure(
-      repos,
-      failure,
-    );
-  }
-}
-
-/// @nodoc
-const $PaginatedReposState = _$PaginatedReposStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$PaginatedReposState {
   Fresh<List<GithubRepo>> get repos => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Fresh<List<GithubRepo>> repos) initial,
@@ -162,10 +124,11 @@ class _$PaginatedReposStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res>
+abstract class _$$_InitialCopyWith<$Res>
     implements $PaginatedReposStateCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
   @override
   $Res call({Fresh<List<GithubRepo>> repos});
 
@@ -174,20 +137,20 @@ abstract class _$InitialCopyWith<$Res>
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
     extends _$PaginatedReposStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _$_Initial get _value => super._value as _$_Initial;
 
   @override
   $Res call({
     Object? repos = freezed,
   }) {
-    return _then(_Initial(
+    return _then(_$_Initial(
       repos == freezed
           ? _value.repos
           : repos // ignore: cast_nullable_to_non_nullable
@@ -213,7 +176,7 @@ class _$_Initial extends _Initial {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initial &&
+            other is _$_Initial &&
             const DeepCollectionEquality().equals(other.repos, repos));
   }
 
@@ -223,8 +186,8 @@ class _$_Initial extends _Initial {
 
   @JsonKey(ignore: true)
   @override
-  _$InitialCopyWith<_Initial> get copyWith =>
-      __$InitialCopyWithImpl<_Initial>(this, _$identity);
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -313,23 +276,23 @@ class _$_Initial extends _Initial {
 }
 
 abstract class _Initial extends PaginatedReposState {
-  const factory _Initial(Fresh<List<GithubRepo>> repos) = _$_Initial;
+  const factory _Initial(final Fresh<List<GithubRepo>> repos) = _$_Initial;
   const _Initial._() : super._();
 
   @override
-  Fresh<List<GithubRepo>> get repos;
+  Fresh<List<GithubRepo>> get repos => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$InitialCopyWith<_Initial> get copyWith =>
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadInProgressCopyWith<$Res>
+abstract class _$$_LoadInProgressCopyWith<$Res>
     implements $PaginatedReposStateCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(
-          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
-      __$LoadInProgressCopyWithImpl<$Res>;
+  factory _$$_LoadInProgressCopyWith(
+          _$_LoadInProgress value, $Res Function(_$_LoadInProgress) then) =
+      __$$_LoadInProgressCopyWithImpl<$Res>;
   @override
   $Res call({Fresh<List<GithubRepo>> repos, int itemPerPage});
 
@@ -338,22 +301,22 @@ abstract class _$LoadInProgressCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res>
+class __$$_LoadInProgressCopyWithImpl<$Res>
     extends _$PaginatedReposStateCopyWithImpl<$Res>
-    implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(
-      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
-      : super(_value, (v) => _then(v as _LoadInProgress));
+    implements _$$_LoadInProgressCopyWith<$Res> {
+  __$$_LoadInProgressCopyWithImpl(
+      _$_LoadInProgress _value, $Res Function(_$_LoadInProgress) _then)
+      : super(_value, (v) => _then(v as _$_LoadInProgress));
 
   @override
-  _LoadInProgress get _value => super._value as _LoadInProgress;
+  _$_LoadInProgress get _value => super._value as _$_LoadInProgress;
 
   @override
   $Res call({
     Object? repos = freezed,
     Object? itemPerPage = freezed,
   }) {
-    return _then(_LoadInProgress(
+    return _then(_$_LoadInProgress(
       repos == freezed
           ? _value.repos
           : repos // ignore: cast_nullable_to_non_nullable
@@ -385,7 +348,7 @@ class _$_LoadInProgress extends _LoadInProgress {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadInProgress &&
+            other is _$_LoadInProgress &&
             const DeepCollectionEquality().equals(other.repos, repos) &&
             const DeepCollectionEquality()
                 .equals(other.itemPerPage, itemPerPage));
@@ -399,8 +362,8 @@ class _$_LoadInProgress extends _LoadInProgress {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadInProgressCopyWith<_LoadInProgress> get copyWith =>
-      __$LoadInProgressCopyWithImpl<_LoadInProgress>(this, _$identity);
+  _$$_LoadInProgressCopyWith<_$_LoadInProgress> get copyWith =>
+      __$$_LoadInProgressCopyWithImpl<_$_LoadInProgress>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -490,24 +453,25 @@ class _$_LoadInProgress extends _LoadInProgress {
 
 abstract class _LoadInProgress extends PaginatedReposState {
   const factory _LoadInProgress(
-      Fresh<List<GithubRepo>> repos, int itemPerPage) = _$_LoadInProgress;
+          final Fresh<List<GithubRepo>> repos, final int itemPerPage) =
+      _$_LoadInProgress;
   const _LoadInProgress._() : super._();
 
   @override
-  Fresh<List<GithubRepo>> get repos;
-  int get itemPerPage;
+  Fresh<List<GithubRepo>> get repos => throw _privateConstructorUsedError;
+  int get itemPerPage => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LoadInProgressCopyWith<_LoadInProgress> get copyWith =>
+  _$$_LoadInProgressCopyWith<_$_LoadInProgress> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadSuccessCopyWith<$Res>
+abstract class _$$_LoadSuccessCopyWith<$Res>
     implements $PaginatedReposStateCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(
-          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
-      __$LoadSuccessCopyWithImpl<$Res>;
+  factory _$$_LoadSuccessCopyWith(
+          _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
+      __$$_LoadSuccessCopyWithImpl<$Res>;
   @override
   $Res call({Fresh<List<GithubRepo>> repos, bool isNextPageAvailable});
 
@@ -516,22 +480,22 @@ abstract class _$LoadSuccessCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res>
+class __$$_LoadSuccessCopyWithImpl<$Res>
     extends _$PaginatedReposStateCopyWithImpl<$Res>
-    implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(
-      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
-      : super(_value, (v) => _then(v as _LoadSuccess));
+    implements _$$_LoadSuccessCopyWith<$Res> {
+  __$$_LoadSuccessCopyWithImpl(
+      _$_LoadSuccess _value, $Res Function(_$_LoadSuccess) _then)
+      : super(_value, (v) => _then(v as _$_LoadSuccess));
 
   @override
-  _LoadSuccess get _value => super._value as _LoadSuccess;
+  _$_LoadSuccess get _value => super._value as _$_LoadSuccess;
 
   @override
   $Res call({
     Object? repos = freezed,
     Object? isNextPageAvailable = freezed,
   }) {
-    return _then(_LoadSuccess(
+    return _then(_$_LoadSuccess(
       repos == freezed
           ? _value.repos
           : repos // ignore: cast_nullable_to_non_nullable
@@ -564,7 +528,7 @@ class _$_LoadSuccess extends _LoadSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadSuccess &&
+            other is _$_LoadSuccess &&
             const DeepCollectionEquality().equals(other.repos, repos) &&
             const DeepCollectionEquality()
                 .equals(other.isNextPageAvailable, isNextPageAvailable));
@@ -578,8 +542,8 @@ class _$_LoadSuccess extends _LoadSuccess {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
-      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
+      __$$_LoadSuccessCopyWithImpl<_$_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -668,25 +632,25 @@ class _$_LoadSuccess extends _LoadSuccess {
 }
 
 abstract class _LoadSuccess extends PaginatedReposState {
-  const factory _LoadSuccess(Fresh<List<GithubRepo>> repos,
-      {required bool isNextPageAvailable}) = _$_LoadSuccess;
+  const factory _LoadSuccess(final Fresh<List<GithubRepo>> repos,
+      {required final bool isNextPageAvailable}) = _$_LoadSuccess;
   const _LoadSuccess._() : super._();
 
   @override
-  Fresh<List<GithubRepo>> get repos;
-  bool get isNextPageAvailable;
+  Fresh<List<GithubRepo>> get repos => throw _privateConstructorUsedError;
+  bool get isNextPageAvailable => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadFailureCopyWith<$Res>
+abstract class _$$_LoadFailureCopyWith<$Res>
     implements $PaginatedReposStateCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(
-          _LoadFailure value, $Res Function(_LoadFailure) then) =
-      __$LoadFailureCopyWithImpl<$Res>;
+  factory _$$_LoadFailureCopyWith(
+          _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
+      __$$_LoadFailureCopyWithImpl<$Res>;
   @override
   $Res call({Fresh<List<GithubRepo>> repos, GithubFailure failure});
 
@@ -696,22 +660,22 @@ abstract class _$LoadFailureCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res>
+class __$$_LoadFailureCopyWithImpl<$Res>
     extends _$PaginatedReposStateCopyWithImpl<$Res>
-    implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(
-      _LoadFailure _value, $Res Function(_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _LoadFailure));
+    implements _$$_LoadFailureCopyWith<$Res> {
+  __$$_LoadFailureCopyWithImpl(
+      _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _$_LoadFailure));
 
   @override
-  _LoadFailure get _value => super._value as _LoadFailure;
+  _$_LoadFailure get _value => super._value as _$_LoadFailure;
 
   @override
   $Res call({
     Object? repos = freezed,
     Object? failure = freezed,
   }) {
-    return _then(_LoadFailure(
+    return _then(_$_LoadFailure(
       repos == freezed
           ? _value.repos
           : repos // ignore: cast_nullable_to_non_nullable
@@ -750,7 +714,7 @@ class _$_LoadFailure extends _LoadFailure {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LoadFailure &&
+            other is _$_LoadFailure &&
             const DeepCollectionEquality().equals(other.repos, repos) &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
@@ -763,8 +727,8 @@ class _$_LoadFailure extends _LoadFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
+      __$$_LoadFailureCopyWithImpl<_$_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -854,14 +818,15 @@ class _$_LoadFailure extends _LoadFailure {
 
 abstract class _LoadFailure extends PaginatedReposState {
   const factory _LoadFailure(
-      Fresh<List<GithubRepo>> repos, GithubFailure failure) = _$_LoadFailure;
+          final Fresh<List<GithubRepo>> repos, final GithubFailure failure) =
+      _$_LoadFailure;
   const _LoadFailure._() : super._();
 
   @override
-  Fresh<List<GithubRepo>> get repos;
-  GithubFailure get failure;
+  Fresh<List<GithubRepo>> get repos => throw _privateConstructorUsedError;
+  GithubFailure get failure => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }

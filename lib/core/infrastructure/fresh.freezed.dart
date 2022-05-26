@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'fresh.dart';
@@ -11,24 +12,7 @@ part of 'fresh.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FreshTearOff {
-  const _$FreshTearOff();
-
-  _Fresh<T> call<T>(
-      {required T entity, required bool isFresh, bool? isNextPageAvailable}) {
-    return _Fresh<T>(
-      entity: entity,
-      isFresh: isFresh,
-      isNextPageAvailable: isNextPageAvailable,
-    );
-  }
-}
-
-/// @nodoc
-const $Fresh = _$FreshTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Fresh<T> {
@@ -80,21 +64,22 @@ class _$FreshCopyWithImpl<T, $Res> implements $FreshCopyWith<T, $Res> {
 }
 
 /// @nodoc
-abstract class _$FreshCopyWith<T, $Res> implements $FreshCopyWith<T, $Res> {
-  factory _$FreshCopyWith(_Fresh<T> value, $Res Function(_Fresh<T>) then) =
-      __$FreshCopyWithImpl<T, $Res>;
+abstract class _$$_FreshCopyWith<T, $Res> implements $FreshCopyWith<T, $Res> {
+  factory _$$_FreshCopyWith(
+          _$_Fresh<T> value, $Res Function(_$_Fresh<T>) then) =
+      __$$_FreshCopyWithImpl<T, $Res>;
   @override
   $Res call({T entity, bool isFresh, bool? isNextPageAvailable});
 }
 
 /// @nodoc
-class __$FreshCopyWithImpl<T, $Res> extends _$FreshCopyWithImpl<T, $Res>
-    implements _$FreshCopyWith<T, $Res> {
-  __$FreshCopyWithImpl(_Fresh<T> _value, $Res Function(_Fresh<T>) _then)
-      : super(_value, (v) => _then(v as _Fresh<T>));
+class __$$_FreshCopyWithImpl<T, $Res> extends _$FreshCopyWithImpl<T, $Res>
+    implements _$$_FreshCopyWith<T, $Res> {
+  __$$_FreshCopyWithImpl(_$_Fresh<T> _value, $Res Function(_$_Fresh<T>) _then)
+      : super(_value, (v) => _then(v as _$_Fresh<T>));
 
   @override
-  _Fresh<T> get _value => super._value as _Fresh<T>;
+  _$_Fresh<T> get _value => super._value as _$_Fresh<T>;
 
   @override
   $Res call({
@@ -102,7 +87,7 @@ class __$FreshCopyWithImpl<T, $Res> extends _$FreshCopyWithImpl<T, $Res>
     Object? isFresh = freezed,
     Object? isNextPageAvailable = freezed,
   }) {
-    return _then(_Fresh<T>(
+    return _then(_$_Fresh<T>(
       entity: entity == freezed
           ? _value.entity
           : entity // ignore: cast_nullable_to_non_nullable
@@ -142,7 +127,7 @@ class _$_Fresh<T> extends _Fresh<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Fresh<T> &&
+            other is _$_Fresh<T> &&
             const DeepCollectionEquality().equals(other.entity, entity) &&
             const DeepCollectionEquality().equals(other.isFresh, isFresh) &&
             const DeepCollectionEquality()
@@ -158,25 +143,25 @@ class _$_Fresh<T> extends _Fresh<T> {
 
   @JsonKey(ignore: true)
   @override
-  _$FreshCopyWith<T, _Fresh<T>> get copyWith =>
-      __$FreshCopyWithImpl<T, _Fresh<T>>(this, _$identity);
+  _$$_FreshCopyWith<T, _$_Fresh<T>> get copyWith =>
+      __$$_FreshCopyWithImpl<T, _$_Fresh<T>>(this, _$identity);
 }
 
 abstract class _Fresh<T> extends Fresh<T> {
   const factory _Fresh(
-      {required T entity,
-      required bool isFresh,
-      bool? isNextPageAvailable}) = _$_Fresh<T>;
+      {required final T entity,
+      required final bool isFresh,
+      final bool? isNextPageAvailable}) = _$_Fresh<T>;
   const _Fresh._() : super._();
 
   @override
-  T get entity;
+  T get entity => throw _privateConstructorUsedError;
   @override
-  bool get isFresh;
+  bool get isFresh => throw _privateConstructorUsedError;
   @override
-  bool? get isNextPageAvailable;
+  bool? get isNextPageAvailable => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$FreshCopyWith<T, _Fresh<T>> get copyWith =>
+  _$$_FreshCopyWith<T, _$_Fresh<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

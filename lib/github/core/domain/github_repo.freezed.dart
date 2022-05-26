@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'github_repo.dart';
@@ -11,28 +12,7 @@ part of 'github_repo.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$GithubRepoTearOff {
-  const _$GithubRepoTearOff();
-
-  _GithubRepo call(
-      {required User owner,
-      required String name,
-      required String description,
-      required int stargazersCount}) {
-    return _GithubRepo(
-      owner: owner,
-      name: name,
-      description: description,
-      stargazersCount: stargazersCount,
-    );
-  }
-}
-
-/// @nodoc
-const $GithubRepo = _$GithubRepoTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$GithubRepo {
@@ -100,10 +80,11 @@ class _$GithubRepoCopyWithImpl<$Res> implements $GithubRepoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$GithubRepoCopyWith<$Res> implements $GithubRepoCopyWith<$Res> {
-  factory _$GithubRepoCopyWith(
-          _GithubRepo value, $Res Function(_GithubRepo) then) =
-      __$GithubRepoCopyWithImpl<$Res>;
+abstract class _$$_GithubRepoCopyWith<$Res>
+    implements $GithubRepoCopyWith<$Res> {
+  factory _$$_GithubRepoCopyWith(
+          _$_GithubRepo value, $Res Function(_$_GithubRepo) then) =
+      __$$_GithubRepoCopyWithImpl<$Res>;
   @override
   $Res call({User owner, String name, String description, int stargazersCount});
 
@@ -112,14 +93,14 @@ abstract class _$GithubRepoCopyWith<$Res> implements $GithubRepoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$GithubRepoCopyWithImpl<$Res> extends _$GithubRepoCopyWithImpl<$Res>
-    implements _$GithubRepoCopyWith<$Res> {
-  __$GithubRepoCopyWithImpl(
-      _GithubRepo _value, $Res Function(_GithubRepo) _then)
-      : super(_value, (v) => _then(v as _GithubRepo));
+class __$$_GithubRepoCopyWithImpl<$Res> extends _$GithubRepoCopyWithImpl<$Res>
+    implements _$$_GithubRepoCopyWith<$Res> {
+  __$$_GithubRepoCopyWithImpl(
+      _$_GithubRepo _value, $Res Function(_$_GithubRepo) _then)
+      : super(_value, (v) => _then(v as _$_GithubRepo));
 
   @override
-  _GithubRepo get _value => super._value as _GithubRepo;
+  _$_GithubRepo get _value => super._value as _$_GithubRepo;
 
   @override
   $Res call({
@@ -128,7 +109,7 @@ class __$GithubRepoCopyWithImpl<$Res> extends _$GithubRepoCopyWithImpl<$Res>
     Object? description = freezed,
     Object? stargazersCount = freezed,
   }) {
-    return _then(_GithubRepo(
+    return _then(_$_GithubRepo(
       owner: owner == freezed
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
@@ -188,7 +169,7 @@ class _$_GithubRepo extends _GithubRepo with DiagnosticableTreeMixin {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GithubRepo &&
+            other is _$_GithubRepo &&
             const DeepCollectionEquality().equals(other.owner, owner) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
@@ -207,28 +188,28 @@ class _$_GithubRepo extends _GithubRepo with DiagnosticableTreeMixin {
 
   @JsonKey(ignore: true)
   @override
-  _$GithubRepoCopyWith<_GithubRepo> get copyWith =>
-      __$GithubRepoCopyWithImpl<_GithubRepo>(this, _$identity);
+  _$$_GithubRepoCopyWith<_$_GithubRepo> get copyWith =>
+      __$$_GithubRepoCopyWithImpl<_$_GithubRepo>(this, _$identity);
 }
 
 abstract class _GithubRepo extends GithubRepo {
   const factory _GithubRepo(
-      {required User owner,
-      required String name,
-      required String description,
-      required int stargazersCount}) = _$_GithubRepo;
+      {required final User owner,
+      required final String name,
+      required final String description,
+      required final int stargazersCount}) = _$_GithubRepo;
   const _GithubRepo._() : super._();
 
   @override
-  User get owner;
+  User get owner => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  String get description;
+  String get description => throw _privateConstructorUsedError;
   @override
-  int get stargazersCount;
+  int get stargazersCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$GithubRepoCopyWith<_GithubRepo> get copyWith =>
+  _$$_GithubRepoCopyWith<_$_GithubRepo> get copyWith =>
       throw _privateConstructorUsedError;
 }

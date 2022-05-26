@@ -16,8 +16,8 @@ class PaginatedReposListView extends StatefulWidget {
     required this.noResultMessage,
   }) : super(key: key);
 
-  final StateNotifierProvider<PaginatedReposNotifier, PaginatedReposState>
-      paginatedReposNotifierProvider;
+  final AutoDisposeStateNotifierProvider<PaginatedReposNotifier,
+      PaginatedReposState> paginatedReposNotifierProvider;
   final void Function(WidgetRef ref) getNextPage;
   final String noResultMessage;
 

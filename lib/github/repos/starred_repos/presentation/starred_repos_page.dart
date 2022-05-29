@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../../../auth/shared/provider.dart';
+import '../../../../core/presentation/routes/app_router.gr.dart';
+import '../../../../search/presentation/seach_bar.dart';
 import '../../../core/presentation/paginated_repos_list_view.dart';
 import '../../../core/shared/providers.dart';
 
@@ -33,24 +35,23 @@ class _StarredReposPageState extends ConsumerState<StarredReposPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Starred repositories'),
-        actions: [
-          IconButton(
-            onPressed: () => ref.read(authNotifierProvider.notifier).signOut(),
-            icon: const Icon(MdiIcons.logoutVariant),
-          )
-        ],
-      ),
-      body: PaginatedReposListView(
-        paginatedReposNotifierProvider: starredReposNotifierProvider,
-        getNextPage: (WidgetRef ref) {
-          ref
-              .read(starredReposNotifierProvider.notifier)
-              .getNextStarredReposPage();
-        },
-        noResultMessage:
-            "That's about everything we could find in your starred repos right now.",
+      body: SearchBar(
+        body: PaginatedReposListView(
+          paginatedReposNotifierProvider: starredReposNotifierProvider,
+          getNextPage: (WidgetRef ref) {
+            ref
+                .read(starredReposNotifierProvider.notifier)
+                .getNextStarredReposPage();
+          },
+          noResultMessage:
+              "That's about everything we could find in your starred repos right now.",
+        ),
+        title: 'Starred repositories',
+        hint: 'Search all repositories...',
+        onNavigateToPage: (String searchTerm) => AutoRouter.of(context).push(
+          SearchedReposRoute(searchTerm: searchTerm),
+        ),
+        onSignOut: () => ref.read(authNotifierProvider.notifier).signOut(),
       ),
     );
   }

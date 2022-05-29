@@ -29,6 +29,7 @@ dependencies:
   cached_network_image: ^3.2.0
   shimmer: ^2.0.0
   flash: ^2.0.3+1
+  material_floating_search_bar: ^0.3.7
 
 dev_dependencies:
   flutter_test:

@@ -11,7 +11,10 @@ class SearchHistoryRepository {
 
   SearchHistoryRepository(this._sembastDatabase);
 
-  Stream<List<String>> watchSearchTerms({String? filterKeyWord}) {
+  Stream<List<String>> watchSearchTerms({
+    String? filterKeyWord,
+    String? filter,
+  }) {
     return _store
         .query(
           finder: filterKeyWord != null && filterKeyWord.isNotEmpty
@@ -48,6 +51,16 @@ class SearchHistoryRepository {
   }
 
   Future<void> _addSearchTerm(String term, DatabaseClient dbClient) async {
+    final eKey = await _store.findKey(
+      dbClient,
+      finder: Finder(
+        filter: Filter.custom((record) => record.value == term),
+      ),
+    );
+    if (eKey != null) {
+      putSearchedTermFirst(term);
+      return;
+    }
     await _store.add(dbClient, term);
     final count = await _store.count(dbClient);
     if (count > kHistoryLength) {

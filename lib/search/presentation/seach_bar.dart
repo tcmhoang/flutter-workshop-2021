@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -49,6 +52,18 @@ class SearchBarState extends ConsumerState<SearchBar> {
     return FloatingSearchBar(
       controller: _controller,
       onSubmitted: (query) => navigateAndAddHistory(query),
+      automaticallyImplyBackButton: false,
+      leadingActions: [
+        IconButton(
+          splashRadius: 10,
+          icon: Icon(
+            AutoRouter.of(context).canPopSelfOrChildren && Platform.isIOS
+                ? Icons.arrow_back_ios
+                : Icons.arrow_back,
+          ),
+          onPressed: () => AutoRouter.of(context).pop(),
+        )
+      ],
       builder: (context, transition) {
         return Material(
           color: Theme.of(context).cardColor,

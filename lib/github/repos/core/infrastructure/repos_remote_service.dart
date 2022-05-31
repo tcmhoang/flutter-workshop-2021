@@ -24,7 +24,7 @@ abstract class ReposRemoteService {
         requestUri,
         options: Options(
           headers: {
-            'If-None_Match': previousHeader?.etag ?? '',
+            'If-None-Match': previousHeader?.etag ?? '',
           },
         ),
       );

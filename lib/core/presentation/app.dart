@@ -43,8 +43,15 @@ class App extends ConsumerWidget {
     });
     return MaterialApp.router(
       title: 'Repositories Viewer',
+      theme: _setupThemeData(),
       routerDelegate: appRouter.delegate(),
       routeInformationParser: appRouter.defaultRouteParser(),
+    );
+  }
+
+  ThemeData _setupThemeData() {
+    return ThemeData.light().copyWith(
+      primaryColor: Colors.grey.shade50,
     );
   }
 }

@@ -1,9 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:repo_viewer/github/detail/domain/github_repo_detail.dart';
 import 'package:sembast/sembast.dart';
 
-part 'github_repo_detail_dto.g.dart';
+import '../domain/github_repo_detail.dart';
+
 part 'github_repo_detail_dto.freezed.dart';
+part 'github_repo_detail_dto.g.dart';
 
 @freezed
 class GithubRepoDetailDto with _$GithubRepoDetailDto {

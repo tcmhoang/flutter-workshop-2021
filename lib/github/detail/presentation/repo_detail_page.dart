@@ -8,6 +8,7 @@ import 'package:repo_viewer/github/core/presentation/no_result_display.dart';
 import 'package:repo_viewer/github/core/shared/providers.dart';
 import 'package:repo_viewer/github/detail/application/repo_detail_notifier.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../core/presentation/toast.dart';
@@ -121,6 +122,14 @@ class _RepoDetailPageState extends ConsumerState<RepoDetailPage> {
             } else {
               return WebView(
                 javascriptMode: JavascriptMode.unrestricted,
+                navigationDelegate: (navreq) {
+                  if (navreq.url.startsWith('data:')) {
+                    return NavigationDecision.navigate;
+                  } else {
+                    launchUrl(Uri.parse(navreq.url));
+                    return NavigationDecision.prevent;
+                  }
+                },
                 initialUrl: Uri.dataFromString(
                   '''
                   <html>

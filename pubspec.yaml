@@ -30,6 +30,7 @@ dependencies:
   shimmer: ^2.0.0
   flash: ^2.0.3+1
   material_floating_search_bar: ^0.3.7
+  url_launcher: ^6.1.2
 
 dev_dependencies:
   flutter_test:

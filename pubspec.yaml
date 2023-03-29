@@ -14,7 +14,7 @@ dependencies:
   oauth2: ^2.0.0
   flutter_secure_storage: ^5.0.2
   dartz: ^0.10.0
-  dio: ^4.0.0
+  dio: ^5.1.0
   flutter_hooks: ^0.18.0
   hooks_riverpod: ^1.0.3
   freezed_annotation: ^2.0.3
